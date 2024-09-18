@@ -1,0 +1,95 @@
+EEEEEEEEE
+======================================================================
+ERROR: test_list_int (__main__.Test01_AddContact.test_list_int)
+*** Test01 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: add_contact(c, id = 7145551212, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates'], 7145551212: ['Richard', 'Stallman']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 14, in test_list_int
+    add_contact(c, id = 7145551212, first_name = 'Richard', last_name = 'Stallman')
+TypeError: add_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test02_AddContact.test_list_int)
+*** Test02 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = add_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: r = 'error' ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 24, in test_list_int
+    r = add_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: add_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test03_ModifyContact.test_list_int)
+*** Test03 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: modify_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: c = {7145551111: ['Richard', 'Stallman'], 5625553333: ['Bill', 'Gates']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 34, in test_list_int
+    modify_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman')
+TypeError: modify_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test04_ModifyContact.test_list_int)
+*** Test04 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = modify_contact(c, id = 7145559999, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: r = 'error' ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 44, in test_list_int
+    r = modify_contact(c, id = 7145559999, first_name = 'Richard', last_name = 'Stallman')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: modify_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test05_DeleteContact.test_list_int)
+*** Test05 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: delete_contact(c, id = 7145551111) *** EXPECT: c = {5625553333: ['Bill', 'Gates']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 54, in test_list_int
+    delete_contact(c, id = 7145551111)
+TypeError: delete_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test06_DeleteContact.test_list_int)
+*** Test06 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = delete_contact(c, id = 7145559999) *** EXPECT: r = 'error' ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 64, in test_list_int
+    r = delete_contact(c, id = 7145559999)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: delete_contact() got an unexpected keyword argument 'id'
+
+======================================================================
+ERROR: test_list_int (__main__.Test07_SortContacts.test_list_int)
+*** Test07 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = sort_contacts(c) *** EXPECT: r = {5625553333: ['Bill', 'Gates'], 7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 74, in test_list_int
+    r = sort_contacts(c)
+        ^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/contacts.py", line 46, in sort_contacts
+    contact_dict.sort()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'sort'
+
+======================================================================
+ERROR: test_list_int (__main__.Test08_FindContact.test_list_int)
+*** Test08 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = 'jobs') *** EXPECT: r = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 84, in test_list_int
+    r = find_contact(c, find = 'jobs')
+        ^^^^^^^^^^^^
+NameError: name 'find_contact' is not defined. Did you mean: 'add_contact'?
+
+======================================================================
+ERROR: test_list_int (__main__.Test09_FindContact.test_list_int)
+*** Test09 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = '5625553333') *** EXPECT: r = {5625553333: ['Bill', 'Gates']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 94, in test_list_int
+    r = find_contact(c, find = '5625553333')
+        ^^^^^^^^^^^^
+NameError: name 'find_contact' is not defined. Did you mean: 'add_contact'?
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.008s
+
+FAILED (errors=9)

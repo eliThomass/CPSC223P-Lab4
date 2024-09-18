@@ -6,27 +6,33 @@ contact_dict_ = {}
 
 def print_list():
 	"""lists contacts"""
-	print("======================== CONTACT LIST =========================")
-	print("Index   Last Name             First Name	     Phone")
-	print("======  ====================  ====================   ==========")
-	index = 0
-	for contact in contact_dict_:
-		print("{:<7} {:<21} {:<1}".format(index, contact[0], contact[1]))
-		index += 1
+	print("=================== CONTACT LIST ======================")
+	print("Last Name             First Name	     Phone")
+	print("====================  ====================   ==========")
+	for ID in contact_dict_:
+		print("{:<21} {:<22} {:<22}".format(contact_dict_[ID][1], contact_dict_[ID][0], ID))
 
-def add_contact(contact_dict, ID_ = "N/A", first_name = "N/A", last_name = "N/A"):
+def add_contact(contact_dict, ID_ = 0, first_name = "N/A", last_name = "N/A"):
 	"""adds a contact to end of list"""
-	contact_dict.append([first_name,last_name])
-	return contact_dict
+	try:
+		if ID_ in contact_dict_: 
+			print("error.")
+		else: 
+			contact_dict[ID_] = [first_name, last_name]
+			print("Added:", first_name, last_name)
+		return contact_dict[ID_]
+	except:
+		print("Invalid input.")
 
-def modify_contact(contact_dict, first_name = "N/A", last_name = "N/A", index = 0):
+def modify_contact(contact_dict, ID_ = 0, first_name = "N/A", last_name = "N/A"):
 	"""modify a contact within a valid index range"""
 	try:
-		if index < 0 or index >= len(contact_dict):		
-			print("Invalid index number.")
-			return False
-		contact_dict[index] = [first_name, last_name]
-		return True
+		if ID_ in contact_dict_:
+			contact_dict[ID_] = [first_name, last_name]
+			print("Modified: ", first_name, last_name)
+		else:
+			print("error.")
+		return contact_dict[ID_]
 	except:
 		print("Invalid input.")
 	
@@ -51,11 +57,10 @@ def sort_contacts(contact_dict, column=0):
 def print_menu():
 	"""GUI for program"""
 	print("\n     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
-	print("1. Print list")
-	print("2. Add contact")
-	print("3. Modify contact")
-	print("4. Delete contact")
-	print("5. Sort list by first name")
-	print("6. Sort list by last name")
-	print("7. Exit program\n")
+	print("1. Add contact")
+	print("2. Modify contact")
+	print("3. Delete contact")
+	print("4. Print list")
+	print("5. Sort list")
+	print("6. Exit program\n")
 	return
