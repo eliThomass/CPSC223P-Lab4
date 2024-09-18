@@ -36,23 +36,28 @@ def modify_contact(contact_dict, ID_ = 0, first_name = "N/A", last_name = "N/A")
 	except:
 		print("Invalid input.")
 	
-def delete_contact(contact_dict, index = 0):
+def delete_contact(contact_dict, ID_ = 0):
 	"""delete contact within valid index range"""
 	try:
-		if index < 0 or int(index) >= len(contact_dict):
-			print("Invalid index number.")
-			return False
-		contact_dict.pop(index)
-		return True
+		if ID_ in contact_dict:
+			contact_dict.pop(ID_)
+		else:
+			print("error.")
 	except:
 		print("Invalid input.")
 		
-def sort_contacts(contact_dict, column=0):
+def sort_contacts(contact_dict):
 	"""If column is 0, sort by first name, else, sort by last name"""
-	if column == 0:
-		contact_dict.sort()
-	elif column == 1:
-		contact_dict.sort(key=lambda contact_dict: contact_dict[1])
+	list_temp = []
+	for key, value in contact_dict.items():
+		list_temp.append([key, value[0], value[1]])
+		list_temp.sort(key = lambda x: [x[2], x[1]])
+	contact_dict.clear()
+	for value in list_temp:
+		contact_dict[value[0]] = [value[1], value[2]]
+		
+		
+	contact_dict = sorted(contact_dict.items())
 	
 def print_menu():
 	"""GUI for program"""

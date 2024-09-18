@@ -35,11 +35,11 @@ while exit_program == False:
 		modify_contact(contact_dict_, ID, first, last)
 		
 	elif choice == '3':
-		index = int(input("Enter index to modify: "))
-		delete_contact(contact_dict_, index)
+		ID = int(input("Enter telephone number: "))
+		delete_contact(contact_dict_, ID)
 		
 	elif choice == '5':
-		sort_contacts(contact_dict_, 0)
+		sort_contacts(contact_dict_)
 		
 	elif choice == '6':
 		exit_program = True
