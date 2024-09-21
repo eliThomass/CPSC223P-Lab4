@@ -32,7 +32,7 @@ def modify_contact(contact_dict, id = 0, first_name = "N/A", last_name = "N/A"):
 			print("Modified: ", first_name, last_name)
 			return contact_dict[id]
 		else:
-			print("error.")
+			return "error"
 	except:
 		print("Invalid input.")
 	
@@ -40,7 +40,6 @@ def delete_contact(contact_dict, id = 0):
 	"""delete contact within valid index range"""
 	try:
 		if id in contact_dict:
-			return_val = [id[0], id[1]]
 			contact_dict.pop(id)
 		else:
 			return "error"
@@ -52,13 +51,12 @@ def sort_contacts(contact_dict):
 	list_temp = []
 	for key, value in contact_dict.items():
 		list_temp.append([key, value[0], value[1]])
-		list_temp.sort(key = lambda x: [x[2], x[1]])
+	list_temp.sort(key = lambda x: [x[2].lower(), x[1].lower()])
 	contact_dict.clear()
 	for value in list_temp:
 		contact_dict[value[0]] = [value[1], value[2]]
-		
-		
-	contact_dict = sorted(contact_dict.items())
+	
+	return contact_dict
 	
 def find_contact(contact_dict, find = 0):
 	search_dict = {}
@@ -72,6 +70,9 @@ def find_contact(contact_dict, find = 0):
 	else:
 		for key, value in contact_dict.items():
 			if find in value[0] or find in value[1]:
+				search_dict[key] = [value[0], value[1]]
+				search_dict[key] = contact_dict[key]
+			elif find.lower() in value[0].lower() or find.lower() in value[1].lower():
 				search_dict[key] = [value[0], value[1]]
 				search_dict[key] = contact_dict[key]
 

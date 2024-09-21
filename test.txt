@@ -1,45 +1,5 @@
-...FF.FF.
-======================================================================
-FAIL: test_list_int (__main__.Test04_ModifyContact.test_list_int)
-*** Test04 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = modify_contact(c, id = 7145559999, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: r = 'error' ***
+.........
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 45, in test_list_int
-    self.assertEqual(r, 'error')
-AssertionError: None != 'error'
+Ran 9 tests in 0.001s
 
-======================================================================
-FAIL: test_list_int (__main__.Test05_DeleteContact.test_list_int)
-*** Test05 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: delete_contact(c, id = 7145551111) *** EXPECT: c = {5625553333: ['Bill', 'Gates']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 55, in test_list_int
-    self.assertEqual(c, {5625553333: ['Bill', 'Gates']})
-AssertionError: {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} != {5625553333: ['Bill', 'Gates']}
-- {5625553333: ['Bill', 'Gates'], 7145551111: ['Steve', 'Jobs']}
-+ {5625553333: ['Bill', 'Gates']}
-
-======================================================================
-FAIL: test_list_int (__main__.Test07_SortContacts.test_list_int)
-*** Test07 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = sort_contacts(c) *** EXPECT: r = {5625553333: ['Bill', 'Gates'], 7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 75, in test_list_int
-    self.assertEqual(r, {5625553333: ['Bill', 'Gates'], 7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']})
-AssertionError: None != {5625553333: ['Bill', 'Gates'], 714555111[47 chars]bs']}
-
-======================================================================
-FAIL: test_list_int (__main__.Test08_FindContact.test_list_int)
-*** Test08 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = 'jobs') *** EXPECT: r = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 85, in test_list_int
-    self.assertEqual(r, {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']})
-AssertionError: {} != {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']}
-- {}
-+ {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']}
-
-----------------------------------------------------------------------
-Ran 9 tests in 0.003s
-
-FAILED (failures=4)
+OK
