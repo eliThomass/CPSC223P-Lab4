@@ -63,11 +63,16 @@ def find_contact(contact_dict, find = 0):
 	search_dict = {}
 	
 	"""search_dict[find] = contact_dict[find]"""
+	if find.isnumeric():
+		find = int(find)
+		if find in contact_dict:
+			search_dict[find] = contact_dict[find]
 	
-	for key, value in contact_dict.items():
-		if find in value[0] or find in value[1]:
-			search_dict[key] = [value[0], value[1]]
-			search_dict[key] = contact_dict[key]
+	else:
+		for key, value in contact_dict.items():
+			if find in value[0] or find in value[1]:
+				search_dict[key] = [value[0], value[1]]
+				search_dict[key] = contact_dict[key]
 
 	print("================== FOUND CONTACT(S) ===================")
 	print("Last Name             First Name	     Phone")
