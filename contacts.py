@@ -25,7 +25,7 @@ def add_contact(contact_dict, id = 0, first_name = "N/A", last_name = "N/A"):
 		print("Invalid input.")
 
 def modify_contact(contact_dict, id = 0, first_name = "N/A", last_name = "N/A"):
-	"""modify a contact within a valid index range"""
+	"""modify a contact with valid number"""
 	try:
 		if id in contact_dict:
 			contact_dict[id] = [first_name, last_name]
@@ -37,7 +37,7 @@ def modify_contact(contact_dict, id = 0, first_name = "N/A", last_name = "N/A"):
 		print("Invalid input.")
 	
 def delete_contact(contact_dict, id = 0):
-	"""delete contact within valid index range"""
+	"""delete contact with valid number"""
 	try:
 		if id in contact_dict:
 			contact_dict.pop(id)
@@ -59,9 +59,9 @@ def sort_contacts(contact_dict):
 	return contact_dict
 	
 def find_contact(contact_dict, find = 0):
+	"""Find contact based on number, or by a substring"""
 	search_dict = {}
 	
-	"""search_dict[find] = contact_dict[find]"""
 	if find.isnumeric():
 		find = int(find)
 		if find in contact_dict:
@@ -92,7 +92,6 @@ def print_menu():
 	print("2. Modify contact")
 	print("3. Delete contact")
 	print("4. Print list")
-	print("5. Sort list")
-	print("6. Find contact")
-	print("7. Exit program\n")
+	print("5. Find contact")
+	print("6. Exit program\n")
 	return

@@ -14,6 +14,7 @@ while exit_program == False:
 	print("")
 	
 	if choice == '4':
+		sort_contacts(contact_dict_)
 		print_list()
 		
 	elif choice == '1':
@@ -39,13 +40,10 @@ while exit_program == False:
 		delete_contact(contact_dict_, ID)
 		
 	elif choice == '5':
-		sort_contacts(contact_dict_)
-		
-	elif choice == '6':
 		search = input("Enter search string: ")
 		find_contact(contact_dict_, search)
 		
-	elif choice == '7':
+	elif choice == '6':
 		exit_program = True
 	
 	else:
