@@ -47,7 +47,7 @@ def delete_contact(contact_dict, ID_ = 0):
 		print("Invalid input.")
 		
 def sort_contacts(contact_dict):
-	"""If column is 0, sort by first name, else, sort by last name"""
+	"""If """
 	list_temp = []
 	for key, value in contact_dict.items():
 		list_temp.append([key, value[0], value[1]])
@@ -59,6 +59,25 @@ def sort_contacts(contact_dict):
 		
 	contact_dict = sorted(contact_dict.items())
 	
+def find_contact(contact_dict, find = 0):
+	search_dict = {}
+	
+	"""search_dict[find] = contact_dict[find]"""
+	
+	for key, value in contact_dict.items():
+		if find in value[0] or find in value[1]:
+			search_dict[key] = [value[0], value[1]]
+			search_dict[key] = contact_dict[key]
+
+	print("================== FOUND CONTACT(S) ===================")
+	print("Last Name             First Name	     Phone")
+	print("====================  ====================   ==========")
+	for ID in search_dict:
+		print("{:<21} {:<22} {:<22}".format(search_dict[ID][1], search_dict[ID][0], ID))
+	
+	return search_dict
+	
+			
 def print_menu():
 	"""GUI for program"""
 	print("\n     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
@@ -67,5 +86,6 @@ def print_menu():
 	print("3. Delete contact")
 	print("4. Print list")
 	print("5. Sort list")
-	print("6. Exit program\n")
+	print("6. Find contact")
+	print("7. Exit program\n")
 	return

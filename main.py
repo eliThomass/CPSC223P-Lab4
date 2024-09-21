@@ -42,6 +42,10 @@ while exit_program == False:
 		sort_contacts(contact_dict_)
 		
 	elif choice == '6':
+		search = input("Enter search string: ")
+		find_contact(contact_dict_, search)
+		
+	elif choice == '7':
 		exit_program = True
 	
 	else:
