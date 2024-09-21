@@ -1,86 +1,23 @@
-EEEEEEFEE
+...FF.FF.
 ======================================================================
-ERROR: test_list_int (__main__.Test01_AddContact.test_list_int)
-*** Test01 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: add_contact(c, id = 7145551212, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates'], 7145551212: ['Richard', 'Stallman']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 14, in test_list_int
-    add_contact(c, id = 7145551212, first_name = 'Richard', last_name = 'Stallman')
-TypeError: add_contact() got an unexpected keyword argument 'id'
-
-======================================================================
-ERROR: test_list_int (__main__.Test02_AddContact.test_list_int)
-*** Test02 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = add_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: r = 'error' ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 24, in test_list_int
-    r = add_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman')
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: add_contact() got an unexpected keyword argument 'id'
-
-======================================================================
-ERROR: test_list_int (__main__.Test03_ModifyContact.test_list_int)
-*** Test03 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: modify_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: c = {7145551111: ['Richard', 'Stallman'], 5625553333: ['Bill', 'Gates']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 34, in test_list_int
-    modify_contact(c, id = 7145551111, first_name = 'Richard', last_name = 'Stallman')
-TypeError: modify_contact() got an unexpected keyword argument 'id'
-
-======================================================================
-ERROR: test_list_int (__main__.Test04_ModifyContact.test_list_int)
+FAIL: test_list_int (__main__.Test04_ModifyContact.test_list_int)
 *** Test04 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = modify_contact(c, id = 7145559999, first_name = 'Richard', last_name = 'Stallman') *** EXPECT: r = 'error' ***
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 44, in test_list_int
-    r = modify_contact(c, id = 7145559999, first_name = 'Richard', last_name = 'Stallman')
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() got an unexpected keyword argument 'id'
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 45, in test_list_int
+    self.assertEqual(r, 'error')
+AssertionError: None != 'error'
 
 ======================================================================
-ERROR: test_list_int (__main__.Test05_DeleteContact.test_list_int)
+FAIL: test_list_int (__main__.Test05_DeleteContact.test_list_int)
 *** Test05 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: delete_contact(c, id = 7145551111) *** EXPECT: c = {5625553333: ['Bill', 'Gates']} ***
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 54, in test_list_int
-    delete_contact(c, id = 7145551111)
-TypeError: delete_contact() got an unexpected keyword argument 'id'
-
-======================================================================
-ERROR: test_list_int (__main__.Test06_DeleteContact.test_list_int)
-*** Test06 *** GIVEN: c = {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = delete_contact(c, id = 7145559999) *** EXPECT: r = 'error' ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 64, in test_list_int
-    r = delete_contact(c, id = 7145559999)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: delete_contact() got an unexpected keyword argument 'id'
-
-======================================================================
-ERROR: test_list_int (__main__.Test08_FindContact.test_list_int)
-*** Test08 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = 'jobs') *** EXPECT: r = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 84, in test_list_int
-    r = find_contact(c, find = 'jobs')
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/contacts.py", line 68, in find_contact
-    if find in value[1] or find in value[2]:
-                                   ~~~~~^^^
-IndexError: list index out of range
-
-======================================================================
-ERROR: test_list_int (__main__.Test09_FindContact.test_list_int)
-*** Test09 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = '5625553333') *** EXPECT: r = {5625553333: ['Bill', 'Gates']} ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 94, in test_list_int
-    r = find_contact(c, find = '5625553333')
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/contacts.py", line 68, in find_contact
-    if find in value[1] or find in value[2]:
-                                   ~~~~~^^^
-IndexError: list index out of range
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 55, in test_list_int
+    self.assertEqual(c, {5625553333: ['Bill', 'Gates']})
+AssertionError: {7145551111: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} != {5625553333: ['Bill', 'Gates']}
+- {5625553333: ['Bill', 'Gates'], 7145551111: ['Steve', 'Jobs']}
++ {5625553333: ['Bill', 'Gates']}
 
 ======================================================================
 FAIL: test_list_int (__main__.Test07_SortContacts.test_list_int)
@@ -91,7 +28,18 @@ Traceback (most recent call last):
     self.assertEqual(r, {5625553333: ['Bill', 'Gates'], 7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']})
 AssertionError: None != {5625553333: ['Bill', 'Gates'], 714555111[47 chars]bs']}
 
+======================================================================
+FAIL: test_list_int (__main__.Test08_FindContact.test_list_int)
+*** Test08 *** GIVEN: c = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs'], 5625553333: ['Bill', 'Gates']} *** FUNCTION CALL: r = find_contact(c, find = 'jobs') *** EXPECT: r = {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']} ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab4/test.py", line 85, in test_list_int
+    self.assertEqual(r, {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']})
+AssertionError: {} != {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']}
+- {}
++ {7145551111: ['Alpha', 'Jobs'], 7145552222: ['Steve', 'Jobs']}
+
 ----------------------------------------------------------------------
 Ran 9 tests in 0.003s
 
-FAILED (failures=1, errors=8)
+FAILED (failures=4)
